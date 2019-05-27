@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+
+steps:
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
+
+trigger:
+  branch:
+  - master
+  event:
+  - commit

@@ -7,3 +7,12 @@ steps:
   commands:
   - go build
   - go test
+- name: docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: dh_user
+    password:
+      from_secret: dh_pass
+    repo: allanmatheus/testing-cd
+    tags: latest
